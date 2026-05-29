@@ -1,5 +1,5 @@
-ARG VARIANT="3.14.2-slim-trixie"
-FROM public.ecr.aws/docker/library/python:${VARIANT}
+ARG VERSION="slim-trixie"
+FROM python:${VERSION}
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
@@ -31,19 +31,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && rm -fr /var/log/*
 
 ARG OS_APP_GROUP=vscode
-ARG OS_APP_GID
+ARG LOCAL_GID
 ARG OS_APP_USER=vscode
-ARG OS_APP_UID
+ARG LOCAL_UID
 
 # Create user.
-RUN groupadd -g ${OS_APP_GID:?} ${OS_APP_GROUP} \
-  && useradd -l -m -u ${OS_APP_UID:?} -g ${OS_APP_GROUP} -s /bin/bash ${OS_APP_USER} \
+# Configure sudoers.
+RUN groupadd -g ${LOCAL_GID:?} ${OS_APP_GROUP} \
+  && useradd -l -m -u ${LOCAL_UID:?} -g ${OS_APP_GROUP} -s /bin/bash ${OS_APP_USER} \
   && echo "${OS_APP_USER} ALL=(ALL) NOPASSWD: ALL" >"/etc/sudoers.d/${OS_APP_USER}"
-
-# Install CA certificates.
-RUN --mount=type=bind,target=src \
-  install -t /usr/local/share/ca-certificates src/ca-certificates/*.crt \
-  && update-ca-certificates
 
 USER ${OS_APP_USER}
 

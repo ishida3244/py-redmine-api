@@ -27,14 +27,12 @@
         "editorconfig.editorconfig",
         "MS-CEINTL.vscode-language-pack-ja",
         "oderwat.indent-rainbow",
-        // Git
-        "donjayamanne.githistory",
-        "mhutchie.git-graph",
         // Markdown
-        "livepdm.auto-markdown-toc-ax1",
-        "yzhang.markdown-all-in-one",
-        "shd101wyy.markdown-preview-enhanced",
+        "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
         "davidanson.vscode-markdownlint",
+        "livepdm.auto-markdown-toc-ax1",
+        "shd101wyy.markdown-preview-enhanced",
+        "yzhang.markdown-all-in-one",
         // Python
         "ms-python.python",
         "ms-python.pylint",
@@ -44,8 +42,8 @@
         "njqdev.vscode-python-typehint",
         "ryanluker.vscode-coverage-gutters",
         // Shell script
-        "mads-hartmann.bash-ide-vscode",
         "foxundermoon.shell-format",
+        "mads-hartmann.bash-ide-vscode",
         // TOML
         "tamasfe.even-better-toml",
         // Others
@@ -74,11 +72,6 @@
         "markdown-preview-enhanced.enableLinkify": false,
         "markdown-preview-enhanced.enableScriptExecution": true,
         "markdown-preview-enhanced.plantumlServer": "http://www.plantuml.com/plantuml",
-        "markdown-preview-enhanced.puppeteerArgs": [
-          "--no-sandbox",
-          "--disable-setuid-sandbox"
-        ],
-        "markdown-preview-enhanced.puppeteerWaitForTimeout": 3000,
         "markdown-toc.depthFrom": 2,
         "markdown-toc.depthTo": 4,
         "markdown-toc.detectAndAutoSetSection": true,

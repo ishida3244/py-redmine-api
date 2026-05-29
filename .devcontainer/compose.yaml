@@ -5,8 +5,9 @@ services:
     build:
       context: .
       args:
-        OS_APP_GID: ${LOCAL_UID:-1000}
-        OS_APP_UID: ${LOCAL_GID:-1000}
+        LOCAL_UID: ${LOCAL_UID:-1000}
+        LOCAL_GID: ${LOCAL_GID:-1000}
+        VERSION: "3.13.13-slim-trixie"
     image: py-works
     environment:
       TZ: Asia/Tokyo

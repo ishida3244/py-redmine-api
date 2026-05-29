@@ -224,3 +224,4 @@ __marimo__/
 !launch.json
 *.code-workspace
 .history
+devcontainer-lock.json
